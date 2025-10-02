@@ -30,3 +30,4 @@ export default {
   setupFilesAfterEnv: ["<rootDir>/tests/setup.ts"],
   testTimeout: 10000,
 };
+

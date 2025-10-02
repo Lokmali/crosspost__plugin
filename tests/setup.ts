@@ -21,3 +21,4 @@ declare global {
 // Setup global fetch mock
 global.mockFetch = jest.fn();
 global.fetch = global.mockFetch;
+

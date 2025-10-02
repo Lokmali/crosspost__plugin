@@ -248,3 +248,4 @@ describe("DEFAULT_RETRY_OPTIONS", () => {
     expect(condition({ status: 404 })).toBe(false);
   });
 });
+
