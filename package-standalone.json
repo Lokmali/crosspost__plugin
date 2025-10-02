@@ -1,0 +1,46 @@
+{
+  "name": "crosspost-sdk",
+  "version": "1.0.0",
+  "description": "Standalone crosspost SDK for posting content across multiple social media platforms",
+  "main": "./dist/standalone.js",
+  "types": "./dist/standalone.d.ts",
+  "type": "module",
+  "keywords": [
+    "crosspost",
+    "social-media",
+    "twitter",
+    "linkedin",
+    "facebook",
+    "instagram",
+    "automation",
+    "scheduling",
+    "sdk"
+  ],
+  "author": "Crosspost SDK Team",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node dist/example.js",
+    "demo": "npm run build && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/crosspost-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/crosspost-sdk/issues"
+  },
+  "homepage": "https://github.com/your-org/crosspost-sdk#readme"
+}
+
