@@ -16,15 +16,6 @@
     "emitDecoratorMetadata": true,
     "lib": ["ES2020", "DOM"]
   },
-  "include": [
-    "src/standalone.ts",
-    "src/example.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/index.ts",
-    "src/client.ts"
-  ]
+  "include": ["src/standalone.ts", "src/example.ts"],
+  "exclude": ["node_modules", "dist", "src/index.ts", "src/client.ts"]
 }
-

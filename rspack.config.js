@@ -73,14 +73,14 @@ export default {
           strictVersion: false,
           eager: false,
         },
-        "effect": {
+        effect: {
           version: everyPluginPkg.dependencies.effect,
           singleton: true,
           requiredVersion: everyPluginPkg.dependencies.effect,
           strictVersion: false,
           eager: false,
         },
-        "zod": {
+        zod: {
           version: everyPluginPkg.dependencies.zod,
           singleton: true,
           requiredVersion: everyPluginPkg.dependencies.zod,
