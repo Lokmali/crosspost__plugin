@@ -2,6 +2,35 @@
  * Tests for the CrosspostClient and platform adapters
  */
 
+// Mock every-plugin/zod
+jest.mock("every-plugin/zod", () => {
+  const mockZodType: any = {
+    parse: jest.fn(),
+    safeParse: jest.fn(() => ({ success: true, data: "test" })),
+    optional: jest.fn(() => mockZodType),
+    max: jest.fn(() => mockZodType),
+    min: jest.fn(() => mockZodType),
+    url: jest.fn(() => mockZodType),
+    email: jest.fn(() => mockZodType),
+    refine: jest.fn(() => mockZodType),
+  };
+
+  return {
+    z: {
+      enum: jest.fn(() => mockZodType),
+      object: jest.fn(() => mockZodType),
+      string: jest.fn(() => mockZodType),
+      array: jest.fn(() => mockZodType),
+      number: jest.fn(() => mockZodType),
+      optional: jest.fn(() => mockZodType),
+      boolean: jest.fn(() => mockZodType),
+      union: jest.fn(() => mockZodType),
+      record: jest.fn(() => mockZodType),
+      unknown: jest.fn(() => mockZodType),
+    },
+  };
+});
+
 import {
   CrosspostClient,
   TwitterAdapter,
@@ -232,7 +261,7 @@ describe("TwitterAdapter", () => {
 
     const formatted = adapter.formatContent(content);
     expect(formatted.text.length).toBeLessThanOrEqual(280);
-    expect(formatted.text).toEndWith("...");
+    expect(formatted.text.endsWith("...")).toBe(true);
   });
 
   it("should return character limit", () => {
@@ -424,5 +453,10 @@ describe("BlueskyAdapter", () => {
     );
   });
 });
+
+
+
+
+
 
 

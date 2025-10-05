@@ -13,13 +13,6 @@ global.console = {
 // Mock setTimeout and setInterval for testing
 jest.useFakeTimers();
 
-// Global test utilities
-declare global {
-  var mockFetch: jest.Mock;
-}
-
 // Setup global fetch mock
-global.mockFetch = jest.fn();
-global.fetch = global.mockFetch;
-
-
+(global as any).mockFetch = jest.fn();
+(global as any).fetch = (global as any).mockFetch;

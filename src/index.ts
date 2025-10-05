@@ -275,7 +275,7 @@ export default createPlugin({
 
 			// Create event queue for streaming
 			const eventQueue = yield* Effect.acquireRelease(
-				Queue.bounded<typeof postEventSchema._type>(1000),
+				Queue.bounded<z.infer<typeof postEventSchema>>(1000),
 				(q) => Queue.shutdown(q)
 			);
 
@@ -471,7 +471,7 @@ export default createPlugin({
 
 		// Bulk post
 		const bulkPost = os.bulkPost.handler(async ({ input }) => {
-			const results: typeof bulkPostSchema._type[] = [];
+			const results: z.infer<typeof bulkPostSchema>[] = [];
 			let successCount = 0;
 			let failureCount = 0;
 			

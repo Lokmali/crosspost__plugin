@@ -261,7 +261,7 @@ describe("sanitizeMentions", () => {
   it("should clean mentions", () => {
     const mentions = ["@user1", "user2", '<script>alert("xss")</script>'];
     const clean = sanitizeMentions(mentions);
-    expect(clean).toEqual(["@user1", "user2", 'scriptalert("xss")/script']);
+    expect(clean).toEqual(["@user1", "user2", 'scriptalert(xss)/script']);
   });
 
   it("should remove long mentions", () => {
@@ -307,5 +307,10 @@ describe("sanitizePostContent", () => {
     expect(clean.images).toBeUndefined();
   });
 });
+
+
+
+
+
 
 

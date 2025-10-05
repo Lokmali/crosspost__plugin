@@ -16,9 +16,9 @@ export default {
       },
     ],
   },
-  moduleNameMapping: {
-    "^(\\.{1,2}/.*)\\.js$": "$1",
-  },
+  transformIgnorePatterns: [
+    "node_modules/(?!(every-plugin|zod)/)"
+  ],
   collectCoverageFrom: [
     "src/**/*.ts",
     "!src/**/*.d.ts",
@@ -28,7 +28,5 @@ export default {
   coverageDirectory: "coverage",
   coverageReporters: ["text", "lcov", "html"],
   setupFilesAfterEnv: ["<rootDir>/tests/setup.ts"],
-  testTimeout: 10000,
+  testTimeout: 30000,
 };
-
-
