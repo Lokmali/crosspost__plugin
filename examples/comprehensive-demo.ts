@@ -5,13 +5,13 @@
 import CrosspostSDK, {
   type PlatformConfig,
   type PostContent,
-} from "../src/standalone";
+} from "../src/standalone.js";
 import {
   validatePostContent,
   sanitizePostContent,
-} from "../src/utils/validation";
-import { withRetry } from "../src/utils/retry";
-import { uploadMedia } from "../src/utils/media";
+} from "../src/utils/validation.js";
+import { withRetry } from "../src/utils/retry.js";
+import { uploadMedia } from "../src/utils/media.js";
 
 // Example configuration for all supported platforms
 const platformConfigs: PlatformConfig[] = [
@@ -462,9 +462,12 @@ export { crosspost };
 export default crosspost;
 
 // Run demo if this file is executed directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   runComprehensiveDemo().catch(console.error);
 }
+
+
+
 
 
 
